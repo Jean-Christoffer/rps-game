@@ -11,7 +11,7 @@ export default function Header(props){
 
                 <div className="score-container">
                     <h2 className="score-title">SCORE</h2>
-                    <p className="score">{score ?? 0}</p>
+                    <p className="score">{score}</p>
                 </div>
             </header>
         </>
