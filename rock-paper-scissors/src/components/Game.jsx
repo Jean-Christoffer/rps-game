@@ -1,28 +1,35 @@
-import rock from '/icon-rock.svg'
-import paper from '/icon-paper.svg'
-import scissors from '/icon-scissors.svg'
+import rocks from '/icon-rock.svg'
+import papers from '/icon-paper.svg'
+import scissorss from '/icon-scissors.svg'
+import { motion } from "framer-motion"
+
 export default function Game(props){
-    const {handlePlayerClick} = props
+    const {handlePlayerClick, disabled, values} = props
 
     return(
     <>
     <main>
-        <div className='game-container'>
-           <button value="rock" onClick={handlePlayerClick}  className='rock'>
+
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+         className='game-container'>
+           <button  disabled={disabled} value="rock" onClick={handlePlayerClick}  className={`rock` }>
             <div className='img-container'>
-                 <img src={rock} value="rock"/>
+                 <img src={rocks} value="rock"/>
             </div>  
             </button>
-           <button value="paper" onClick={handlePlayerClick} className='paper'>
+           <button disabled={disabled}  value="paper" onClick={handlePlayerClick}  className={`paper` }>
            <div className='img-container'>
-            <img src={paper}/>
+            <img src={papers}/>
            </div> 
             </button>
-           <button value="scissors" onClick={handlePlayerClick}  className='scissors'>
-            <div className='img-container'><img src={scissors}/></div>
+           <button  disabled={disabled}  value="scissors" onClick={handlePlayerClick} className={`scissors` }>
+            <div className='img-container'><img src={scissorss}/></div>
             </button>
     
-        </div>
+        </motion.div>
     </main>
     </>
     )

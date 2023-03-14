@@ -1,5 +1,5 @@
 export default function Header(props){
-    const {score} = props
+    const {score,computerScore} = props
     return(
         <>
             <header>
@@ -9,8 +9,13 @@ export default function Header(props){
                     <p>SCISSORS</p>
                 </div>
 
+
                 <div className="score-container">
-                    <h2 className="score-title">SCORE</h2>
+                    <h2 className="score-title">COMPUTER SCORE</h2>
+                    <p className="score">{computerScore}</p>
+                </div>
+                <div className="score-container">
+                    <h2 className="score-title">PLAYER SCORE</h2>
                     <p className="score">{score}</p>
                 </div>
             </header>
