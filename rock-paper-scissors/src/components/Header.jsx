@@ -9,15 +9,15 @@ export default function Header(props){
                     <p>SCISSORS</p>
                 </div>
 
-
-                <div className="score-container">
-                    <h2 className="score-title">COMPUTER SCORE</h2>
-                    <p className="score">{computerScore}</p>
-                </div>
                 <div className="score-container">
                     <h2 className="score-title">PLAYER SCORE</h2>
                     <p className="score">{score}</p>
                 </div>
+                <div className="score-container">
+                    <h2 className="score-title">COMPUTER SCORE</h2>
+                    <p className="score">{computerScore}</p>
+                </div>
+
             </header>
         </>
     )

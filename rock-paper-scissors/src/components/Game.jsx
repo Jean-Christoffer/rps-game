@@ -1,10 +1,10 @@
-import rocks from '/icon-rock.svg'
-import papers from '/icon-paper.svg'
-import scissorss from '/icon-scissors.svg'
+import rock from '/icon-rock.svg'
+import paper from '/icon-paper.svg'
+import scissors from '/icon-scissors.svg'
 import { motion } from "framer-motion"
 
 export default function Game(props){
-    const {handlePlayerClick, disabled, values} = props
+    const {setChoice} = props
 
     return(
     <>
@@ -15,18 +15,18 @@ export default function Game(props){
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
          className='game-container'>
-           <button  disabled={disabled} value="rock" onClick={handlePlayerClick}  className={`rock` }>
+           <button  value="rock" onClick={(event)=> setChoice(event.currentTarget.value)}  className={`rock`}>
             <div className='img-container'>
-                 <img src={rocks} value="rock"/>
+                 <img src={rock} value="rock"/>
             </div>  
             </button>
-           <button disabled={disabled}  value="paper" onClick={handlePlayerClick}  className={`paper` }>
+           <button  value="paper" onClick={(event)=> setChoice(event.currentTarget.value)}   className={`paper`}>
            <div className='img-container'>
-            <img src={papers}/>
+            <img src={paper}/>
            </div> 
             </button>
-           <button  disabled={disabled}  value="scissors" onClick={handlePlayerClick} className={`scissors` }>
-            <div className='img-container'><img src={scissorss}/></div>
+           <button  value="scissors" onClick={(event)=> setChoice(event.currentTarget.value)}  className={`scissors`}>
+            <div className='img-container'><img src={scissors}/></div>
             </button>
     
         </motion.div>

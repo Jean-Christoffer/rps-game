@@ -1,24 +1,11 @@
-import rocks from '/icon-rock.svg'
-import papers from '/icon-paper.svg'
-import scissorss from '/icon-scissors.svg'
+import rock from '/icon-rock.svg'
+import paper from '/icon-paper.svg'
+import scissors from '/icon-scissors.svg'
 import { motion } from "framer-motion"
-import clsx from 'clsx';
+import Div from './Div.jsx'
 export default function GameSettle(props){
-    const {values, player,winner, compVal,playVal,reset} = props
-    const classesPlayer = clsx(
-        {
-            'rock' : player === 'rock',
-            'paper' : player === 'paper',
-            'scissors' : player === 'scissors'
-        }
-        )
-        const classesComputer = clsx(
-            {
-                'rock' : values === 'rock',
-                'paper' : values === 'paper',
-                'scissors' : values === 'scissors'
-            }
-        )
+    const {computerChoice, playerChoice,winner, reset} = props
+
     return(
         <>
         <div
@@ -29,17 +16,17 @@ export default function GameSettle(props){
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
            className='player-container'>
-            <p>Player choose {playVal} </p>
-           <div className={classesPlayer}>
+            <p>Player choose {playerChoice} </p>
+           <Div classes = {playerChoice}>
            <div className='img-container'>
            <img src={
-                    player === 'rock' ? rocks :
-                    player === 'paper' ? papers :
-                    player === 'scissors' ? scissorss :
+                    playerChoice === 'rock' ? rock :
+                    playerChoice === 'paper' ? paper :
+                    playerChoice === 'scissors' ? scissors :
                     ''
                     } />
            </div> 
-            </div>
+            </Div>
             </motion.div>
             <motion.h1
             initial={{ opacity: 0, scale: 0 }}
@@ -51,17 +38,17 @@ export default function GameSettle(props){
              animate={{ opacity: 1, scale: 1 }}
              transition={{ duration: 1 }}
              className='computer-container'>
-            <p>Computer choose {compVal}</p>
-                <div className={classesComputer}>
+            <p>Computer choose {computerChoice}</p>
+                <Div classes = {computerChoice}>
                     <div className='img-container'>
                     <img src={
-                        values === 'rock' ? rocks :
-                        values === 'paper' ? papers :
-                        values === 'scissors' ? scissorss :
+                        computerChoice === 'rock' ? rock :
+                        computerChoice === 'paper' ? paper :
+                        computerChoice === 'scissors' ? scissors :
                         ''
                         } />
                     </div>  
-                </div>
+                </Div>
             </motion.div> 
         </div>
         <div className='btn-container'><button className='reset' onClick={reset}>Play again!</button></div>
