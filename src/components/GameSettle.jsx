@@ -28,7 +28,7 @@ export default function GameSettle(props){
            </div> 
             </Div>
             </motion.div>
-            <motion.h1
+            <motion.h1 className='winner'
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
@@ -49,7 +49,8 @@ export default function GameSettle(props){
                         } />
                     </div>  
                 </Div>
-            </motion.div> 
+            </motion.div>
+             
         </div>
         <div className='btn-container'><button className='reset' onClick={reset}>Play again!</button></div>
         </>
