@@ -50,27 +50,22 @@ main{
 
 img{
   transform: translate(-50%,-50%);
-
   margin: 50%;
-
 
 }
 .game-container{
   background-image: url('/bg-triangle.svg');
   display: grid;
   justify-content: center;
-  grid-template-columns:1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   background-repeat: no-repeat;
-  background-position: calc(50% + 16px);
+  background-position: calc(50%);
   margin-top: 100px;
-
 }
          
 .paper, .rock, .scissors  {
-  width: 224px;
-
-  height: 224px;
+  width: 200px;
+  height: 200px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -84,7 +79,6 @@ img{
   transition: 1s ease-in-out;
 
 }
-
 
 
 .settle{
@@ -135,7 +129,7 @@ button.computer{
 .rock{
   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
   box-shadow: 0 8px 1px #DC2E4E;
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 2;
 
 }
