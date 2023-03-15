@@ -165,7 +165,9 @@ button{
     inline-size: 110px;
     overflow-wrap: break-word;
   }
-
+  .winner{
+    font-size: 1rem;
+  }
 }
 .settle{
   display: flex;
